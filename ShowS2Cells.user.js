@@ -3,10 +3,10 @@
 // @name           IITC plugin: Show S2 Cells
 // @author         Endursa
 // @category       Layer
-// @version        0.1.7
+// @version        0.1
 // @namespace      https://github.com/endursa
-// @updateURL      https://raw.githubusercontent.com/endursa   /l17cells/master/l17cells.meta.js
-// @downloadURL    https://raw.githubusercontent.com/endursa   /l17cells/master/l17cells.user.js
+// @updateURL      https://github.com/endursa/S2Cells/blob/master/ShowS2Cells.meta.js
+// @downloadURL    https://github.com/endursa/S2Cells/blob/master/ShowS2Cells.user.js
 // @description    IITC: Shows S2 Cells on the map, level can be chosen
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
