@@ -3,10 +3,10 @@
 // @name           IITC plugin: Show S2 Cells
 // @author         Endursa
 // @category       Layer
-// @version        0.1
+// @version        0.2
 // @namespace      https://github.com/endursa
-// @updateURL      https://github.com/endursa/S2Cells/blob/master/ShowS2Cells.meta.js
-// @downloadURL    https://github.com/endursa/S2Cells/blob/master/ShowS2Cells.user.js
+// @updateURL      https://github.com/endursa/S2Cells/raw/master/ShowS2Cells.user.js
+// @downloadURL    https://github.com/endursa/S2Cells/raw/master/ShowS2Cells.user.js
 // @description    IITC: Shows S2 Cells on the map, level can be chosen
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
@@ -55,6 +55,7 @@ function wrapper(plugin_info) {
    lvl 17 cells determine pokestop/arena density
    lvl 20 cells determine portal density
   */
+
   var levels = [6,12,14,17,20];
   for(var z = 0; z < levels.length; z++){
       var input=document.createElement("input");
@@ -80,6 +81,12 @@ function wrapper(plugin_info) {
       window.plugin.showS2Cells.update();
   }
 
+/*  window.plugin.showS2Cells.onBtnClick = function(e) {
+	var btn = window.plugin.showS2Cells.button,
+		tooltip = window.plugin.showS2Cells.tooltip,
+		layer = window.plugin.showS2Cells.layer;
+  }
+*/
   window.plugin.showS2Cells.setup = function() {
     /// S2 Geometry functions
     // the regional scoreboard is based on a level 6 S2 Cell
@@ -107,6 +114,28 @@ function wrapper(plugin_info) {
 
     (function() {
 
+ /*       $('<style>').prop('type', 'text/css').html('.leaflet-show-S2-Cell a\n{\n	}\n.leaflet-show-S2-Cell a.active\n{\n	background-color: #BBB;\n}\n.leaflet-show-S2-Cell-tooltip\n{\n	background-color: rgba(255, 255, 255, 0.6);\n	display: none;\n	height: 24px;\n	left: 30px;\n	line-height: 24px;\n	margin-left: 15px;\n	margin-top: -12px;\n	padding: 0 10px;\n	position: absolute;\n	top: 50%;\n	white-space: nowrap;\n	width: auto;\n}\n.leaflet-show-S2-Cell a.active .leaflet-show-S2-Cell-tooltip\n{\n	display: block;\n}\n.leaflet-show-S2-Cell-tooltip:before\n{\n	border-color: transparent rgba(255, 255, 255, 0.6);\n	border-style: solid;\n	border-width: 12px 12px 12px 0;\n	content: "";\n	display: block;\n	height: 0;\n	left: -12px;\n	position: absolute;\n	width: 0;\n}\n').appendTo('head');
+
+        var parent = $(".leaflet-top.leaflet-left", window.map.getContainer());
+
+        var button = document.createElement("a");
+        button.className = "leaflet-bar-part";
+        button.addEventListener("click", window.plugin.showS2Cells.onBtnClick, false);
+        button.title = 'Show S2 Cells';
+
+        var tooltip = document.createElement("div");
+        tooltip.className = "leaflet-show-S2-Cell-tooltip";
+        button.appendChild(tooltip);
+
+        var container = document.createElement("div");
+        container.className = "leaflet-show-S2-Cell leaflet-bar leaflet-control";
+        container.appendChild(button);
+        parent.append(container);
+
+        window.plugin.showS2Cells.button = button;
+        window.plugin.showS2Cells.tooltip = tooltip;
+        window.plugin.showS2Cells.container = container;
+*/
       window.S2 = {};
 
 
