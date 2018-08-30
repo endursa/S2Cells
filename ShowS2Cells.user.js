@@ -560,12 +560,12 @@ function wrapper(plugin_info) {
 
     // name
 //    var name = window.plugin.showS2Cells.regionName(cell);
-    var color = 'yellow';
+    var color = 'red';
     switch(colorId){
-        case 0: color = 'red';break;
+        case 0: color = 'yellow';break;
         case 1: color = 'green';break;
         case 2: color = 'blue';break;
-        default: color = 'yellow';
+        default: color = 'red';
     }
 
     // the level 6 cells have noticible errors with non-geodesic lines - and the larger level 4 cells are worse
